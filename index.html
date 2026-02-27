@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asad Ali - Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- optional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO/8+0F2Uf2q8+KQw+fK92BfakZNVzZW+Aq+Z+JQqo+z3UEq6Z0j4pvO29JKyV8VIp2vGj4rO0yZQZA4r+z0ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">Asad Ali</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+            <div class="menu-toggle">☰</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hey! I am <span class="highlight">Asad Ali</span></h1>
+                <p>Full‑Stack Developer specialized in Java Spring Boot</p>
+                <p>BSCS 4th-semester student &amp; DSA buff (150+ LeetCode submissions)</p>
+                <div class="buttons">
+                    <a class="btn" href="#projects">View My Work</a>
+                    <a class="btn outline" href="#contact">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>
+                I am a 4th-semester BSCS student, focused on backend development using Java.
+                I have completed Core Java, Object-Oriented Programming, and advanced Data Structures & Algorithms.
+            </p>
+            <p>
+                I have solved 150+ LeetCode problems, covering arrays, recursion, trees, graphs, and dynamic programming.
+                My passion lies in writing clean, maintainable, and scalable backend systems.
+            </p>
+            <p>
+                Currently, I am learning Spring Boot and building REST APIs, while enhancing skills in JPA/Hibernate,
+                database management, and backend architecture design.
+            </p>
+            <ul class="about-highlights">
+                <li>✔ Core Java & OOP — solid foundation</li>
+                <li>✔ Advanced DSA (arrays, recursion, trees, graphs, DP)</li>
+                <li>✔ JDBC + MySQL CRUD & Joins</li>
+                <li>✔ Spring Boot REST API development (in progress)</li>
+                <li>✔ Git & GitHub for version control</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Tech Stack</h2>
+            <ul class="tech-list">
+                <li><i class="fab fa-java"></i> Java</li>
+                <li><i class="fa-solid fa-seedling"></i> Spring Boot</li>
+                <li><i class="fa-solid fa-database"></i> MySQL</li>
+                <li><i class="fa-solid fa-code-branch"></i> JDBC</li>
+                <li><i class="fa-brands fa-html5"></i> HTML / CSS / JS</li>
+                <li><i class="fa-brands fa-git-square"></i> Git &amp; GitHub</li>
+            </ul>
+            <p>Current focus: REST APIs, JPA/Hibernate, backend architecture.</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="cards">
+        
+                <div class="card">
+                    <h3>Task Management REST API</h3>
+                    <p><strong>Tech Stack:</strong> Java, Spring Boot, MySQL, JWT</p>
+                    <ul>
+                        <li>JWT-based authentication & authorization</li>
+                        <li>User registration & login system</li>
+                        <li>CRUD operations for tasks</li>
+                    </ul>
+                </div>
+        
+                <div class="card">
+                    <h3>Java JDBC Management System</h3>
+                    <p><strong>Tech Stack:</strong> Core Java, JDBC, MySQL</p>
+                    <ul>
+                        <li>Implemented CRUD operations</li>
+                        <li>Database relations using SQL joins</li>
+                        <li>Secure login system</li>
+                    </ul>
+                </div>
+        
+                <div class="card">
+                    <h3>DSA Practice Tracker</h3>
+                    <p><strong>Focus:</strong> Problem Solving & Optimization</p>
+                    <ul>
+                        <li>Logged 150+ solved LeetCode problems</li>
+                        <li>Analyzed and optimized solutions</li>
+                        <li>Tracked progress across arrays, graphs, trees, and DP</li>
+                    </ul>
+                </div>
+        
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Get in Touch</h2>
+            <!-- Formspree endpoint (registered) -->
+            <form id="contact-form" action="https://formspree.io/f/xnjbrplp" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+                <p id="form-status"></p>
+            </form>
+            <small>You can also email me directly at <a href="mailto:asadali99534@gmail.com">asadali99534@gmail.com</a></small>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Asad Ali</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // theme toggle logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'light') {
+            document.body.classList.add('light');
+            themeToggle.querySelector('i').className = 'fa-solid fa-sun';
+        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            const isLight = document.body.classList.contains('light');
+            themeToggle.querySelector('i').className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // enhanced contact form handling via Formspree
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
+            if (!name || !email || !message) {
+                status.textContent = 'Please fill out all fields.';
+                status.style.color = 'salmon';
+                return;
+            }
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    status.textContent = 'Message sent! I will reply soon.';
+                    status.style.color = '#8a2be2';
+                    form.reset();
+                } else {
+                    status.textContent = 'Oops! There was a problem sending your message.';
+                    status.style.color = 'salmon';
+                }
+            } catch (err) {
+                status.textContent = 'Network error; please try again later.';
+                status.style.color = 'salmon';
+            }
+        });
+    </script>
+</body>
+</html>
